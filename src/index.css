@@ -58,3 +58,7 @@
         clip-path: polygon(13% 0, 88% 0, 100% 50%, 88% 100%, 13% 100%, 0% 50%);
     }
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

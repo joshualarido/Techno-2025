@@ -5,7 +5,6 @@ import herobg from "../assets/herobg.png"
 import technoimg from "../assets/technoimg.png"
 import scrollbg from "../assets/scrollbg.png"
 
-
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 
@@ -35,7 +34,7 @@ const Home = () => {
                  style={{ backgroundImage: `url(${scrollbg})` }}
             >
                 <h3 className="text-7xl text-primary">What is Techno?</h3>
-                <p className="text-2xl text-text">TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) is a joint event organized by HIMTI BINUS to welcome and inaugurate freshmen of the BINUS University School of Computer Science (SOCS).</p>
+                <p className="text-3xl text-text">TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) is a joint event organized by HIMTI BINUS to welcome and inaugurate freshmen of the BINUS University School of Computer Science (SOCS).</p>
                 <Link to="/"><Button text="Guidebook →"></Button></Link>
             </div>
         </section>
