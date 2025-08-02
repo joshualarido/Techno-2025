@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+/* FONT DECLARATIONS */
+@font-face {
+    font-family: Chancery;
+    src: url("./assets/fonts/Chancery.ttf");
+}
+
+@font-face {
+    font-family: Parisienne;
+    src: url("./assets/fonts/Parisienne.ttf");
+}
+
+@font-face {
+    font-family: Alice;
+    src: url("./assets/fonts/Alice.ttf");
+}
+
+/* THEME DECLARATIONS */
+@theme {
+
+    /* COLORS */
+    --color-primary: #A50083;
+    --color-secondary: #49044D;
+    --color-text: #694B21;
+    --color-btn-primary: #FEC677;
+    --color-btn-secondary: #FEF7B3;
+    --color-btn-border: #FEF8BF;
+    --color-border: #9F6533;
+
+    /* FONTS */
+    --font-chancery: Chancery, serif;
+    --font-parisienne: Parisienne, serif;
+    --font-alice: Alice, serif;
+
+}
+
+@layer base {
+    h1, h2 {
+        @apply font-chancery
+    }
+
+    h3, h4, h5, h6 {
+        @apply font-parisienne
+    }
+
+    p, a {
+        @apply font-alice
+    }
+}
+
+@layer components {
+    .section {
+        @apply px-20 py-20 w-full
+    }
+
+    .button-clip {
+        clip-path: polygon(13% 0, 88% 0, 100% 50%, 88% 100%, 13% 100%, 0% 50%);
+    }
+}
