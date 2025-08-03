@@ -10,7 +10,7 @@ const ScrollBackground = ({ text }) => {
             className="flex justify-center items-center p-8 m-4 bg-no-repeat bg-center bg-cover"
             style={{ 
                 backgroundImage: `url(${scrollbgImage})`,
-                width: '220px',  
+                width: 'auto',  
                 maxWidth: '90%', 
                 backgroundSize: 'contain',
             }}
