@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import techno2025logo from "../assets/techno2025logo.png";
@@ -7,8 +8,10 @@ import scrollbg from "../assets/scrollbg.png"
 
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
+import { categories, faqData } from "../components/faqData.js";
 
 const Home = () => {
+    const [selectedCategory, setSelectedCategory] = useState("TECHNO");
     return (
         <>
         {/* HERO SECTION */}
