@@ -17,6 +17,7 @@ function App() {
           <Route path="/events" element={<Events/>}></Route>
         </Routes>
       </BrowserRouter>
+      <Footer></Footer>
     </>
   )
 }
