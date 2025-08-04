@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 
-import bgevents from "../assets/bgevents.png"; // Background utama halaman Events
-import posterImage from "../assets/posterevents.png"; // Ganti dengan nama file poster Anda yang sebenarnya
-import paperBgImage from "../assets/scrollposter.png"; // Ganti dengan nama file gambar kertas Anda yang sebenarnya
-import Navbar from "../components/Navbar";
+import bgevents from "../assets/bgevents.png";
+import posterImage from "../assets/posterevents.png";
+import paperBgImage from "../assets/scrollposter.png";
+import paperBgMainShow from "../assets/guestbg.png";
+import guestBorderImage from "../assets/guestborder.png";
 
+import Navbar from "../components/Navbar";
 import Button from "../components/Button";
-import ScrollBackground from "../components/Eventtitle.jsx"; // Komponen judul "Events"
+import ScrollBackground from "../components/Eventtitle.jsx";
 import MainShowTitle from "../components/MainShowTitle.jsx";
+import EventCard from "../components/EventCard.jsx";
+
 
 const Events = () => {
     return (
@@ -30,7 +34,7 @@ const Events = () => {
                     {/* Komponen Judul Halaman Events */}
                     <ScrollBackground text="Events" />
 
-                    {/* BAGIAN DUA KOLOM: POSTER DAN KERTAS */}
+                    {/* BAGIAN DUA KOLOM: POSTER DAN KERTAS (PBP) */}
                     <section
                         className="flex flex-col md:flex-row w-full bg-white bg-opacity-10 shadow-lg rounded-lg overflow-hidden mt-0"
                     >
@@ -44,7 +48,7 @@ const Events = () => {
                             />
                         </div>
 
-                        {/* Bagian Kanan: Kertas dengan Background Gambar */}
+                        {/* Bagian Kanan: Kertas dengan Background Gambar (PBP) */}
                         <div
                             className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-start items-center text-center"
                             style={{
@@ -70,8 +74,8 @@ const Events = () => {
                             </p>
 
                             <h3 className="text-4xl font-semibold mt-15 mb-2">Alam Sutera</h3>
-                            
-                            <ul className="text-xl leading-relaxed list-none m-0 p-0 mb-6">
+
+                            <ul className="text-xl leading-relaxed list-none m-0 p-0 mb-15">
                                 <li>Senin, 19 Agustus 2024</li>
                                 <li>Binus @Alam Sutera</li>
                                 <li>Time : 09.00 - 11.00</li>
@@ -85,6 +89,73 @@ const Events = () => {
                 <div className="flex flex-col items-center mx-auto w-full max-w-7xl px-4 py-10 gap-8">
                     {/* Komponen Judul Halaman Main Events */}
                     <MainShowTitle text="Main Show" />
+
+                    {/* Bagian Main Show - An Enchanted Guest Awaits */}
+                    <section
+                        className="w-full p-6 md:p-10 flex flex-col items-center text-center relative mb-8"
+                        style={{
+                            backgroundImage: `url(${paperBgMainShow})`,
+                            backgroundSize: '100% 100%',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                            minHeight: '400px',
+                            backgroundColor: '#fdf0d5',
+                            color: '#333',
+                            paddingTop: '60px',
+                            paddingBottom: '40px',
+                        }}
+                    >
+                        <h2
+                            className="text-5xl font-extrabold mb-3"
+                            style={{
+                                fontSize: '3rem',
+                            }}
+                        >
+                            An Enchanted Guest Awaits...
+                        </h2>
+
+                        <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl gap-8">
+                            {/* Bagian Teks */}
+                            <div className="flex-1 text-left px-4">
+                                <p
+                                    className="text-2xl leading-relaxed"
+                                >
+                                    We will invite Amanda Caesa to our main event, bringing her talents and voice to the event. Don't miss out on her performances!
+                                </p>
+                            </div>
+
+                            {/* Bagian Gambar Border */}
+                            <div className="flex-shrink-0 relative w-64 h-64 md:w-75 md:h-80 flex items-center justify-center">
+                                <img
+                                    src={guestBorderImage}
+                                    alt="Guest Border"
+                                    className="w-full h-full object-contain"
+                                />                                
+                            </div>
+                        </div>
+                    </section>
+        
+
+                    {/*BAGIAN TIGA KARTU EVENTS (Games, Talk Show, Side Quests) */}
+                    <section className="w-full flex flex-col items-center">
+                        
+
+                        <div className="flex flex-wrap justify-center gap-20 w-full">
+
+                            <EventCard
+                                title="Games"
+                                description="Freshmen will receive PBP (Pengenalan Bahasa Pemrograman) training"
+                            />
+                            <EventCard
+                                title="Talk Show"
+                                description="Freshmen will receive PBP (Pengenalan Bahasa Pemrograman) training"
+                            />
+                            <EventCard
+                                title="Side Quests"
+                                description="Freshmen will receive PBP (Pengenalan Bahasa Pemrograman) training"
+                            />
+                        </div>
+                    </section>
                 </div>
             </div>
         </>
