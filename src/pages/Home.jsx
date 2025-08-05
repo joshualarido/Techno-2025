@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Countdown from "react-countdown";
 
 import techno2025logo from "../assets/techno2025logo.png";
 import herobg from "../assets/herobg.png"
+import videobg from "../assets/videohero.mp4"
 import technoimg from "../assets/technoimg.png"
 import scrollbg from "../assets/scrollbg.png"
 import finalbg from "../assets/finalbg.png"
@@ -42,28 +44,44 @@ const Home = () => {
         <>
         {/* HERO SECTION */}
 
-        <section className="flex flex-col bg-no-repeat bg-center bg-cover"
-                 style={{ backgroundImage: `url(${herobg})` }}
-        >
-            <Navbar></Navbar>
-            <div className="flex flex-col justify-center items-center gap-20 w-full py-20">
-                <img src={techno2025logo} alt="herologo" className="w-1/3"/>
-                <a href="#about"><Button text="Learn more →"></Button></a>
-            </div>
+        <section className="relative w-full h-fit overflow-hidden">
+          {/* Background Video */}
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover scale-150 z-[-2]"
+            src={videobg}
+            autoPlay
+            loop
+            muted
+          />
+
+          {/* Black Overlay */}
+          <div className="absolute top-0 left-0 w-full h-full bg-sky-800/60 z-[-1]" />
+
+          {/* Navbar and Content on top of video */}
+          <Navbar />
+
+          <div className="flex flex-col justify-center items-center gap-6 w-full pt-12 pb-20">
+            <img src={techno2025logo} alt="herologo" className="w-1/3 max-lg:w-2/3" />
+            <Countdown
+              date={new Date('2025-09-07T00:00:00')}
+              renderer={renderer}
+            />
+            <Button text="Learn more →" />
+          </div>
         </section>
 
         {/* WHAT IS TECHNO SECTION */}
 
-        <section className="flex flex-row justify-center w-full h-full" id="about">
+        <section className="flex flex-row max-lg:flex-col justify-center w-full h-full" id="about">
             <div>
-                <img src={technoimg} alt="technoimg" className="h-full w-full object-cover"/>
+                <img src={technoimg} alt="technoimg" className="w-full h-full max-lg:h-48 object-cover"/>
             </div>
-            <div className="section h-full flex flex-col justify-between items-start gap-20 bg-no-repeat bg-center bg-cover
-                            border-y-30 border-border inset-shadow-sm inset-shadow-black/50"
+            <div className="h-full flex flex-col justify-between items-start max-lg:items-center gap-20 max-lg:gap-10 bg-no-repeat bg-center bg-cover
+                            border-y-30 border-border p-20 max-lg:p-10 w-full"
                  style={{ backgroundImage: `url(${scrollbg})` }}
             >
-                <h3 className="text-7xl text-primary">What is Techno?</h3>
-                <p className="text-3xl text-text">TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) is a joint event organized by HIMTI BINUS to welcome and inaugurate freshmen of the BINUS University School of Computer Science (SOCS).</p>
+                <h3 className="text-7xl max-lg:text-5xl text-primary max-lg:text-center">What is Techno?</h3>
+                <p className="text-3xl max-lg:text-xl text-text max-lg:text-center">TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) is a joint event organized by HIMTI BINUS to welcome and inaugurate freshmen of the BINUS University School of Computer Science (SOCS).</p>
                 <Link to="/"><Button text="Guidebook →"></Button></Link>
             </div>
         </section>
@@ -75,13 +93,13 @@ const Home = () => {
         style={{ backgroundImage: `url(${finalbg})` }}
       >
 
-        <section className="flex flex-col justify-center items-center gap-12">
+        <section className="flex flex-col justify-center items-center gap-12 max-lg:gap-8">
           {/* BENEFIT */}
 
           <SectionTitle text="Benefits"></SectionTitle>
 
           
-          <div className="flex flex-row items-stretch justify-center gap-12 w-full">
+          <div className="flex flex-row max-lg:flex-col items-stretch justify-center gap-12 w-full max-lg:w-2/3 max-md:w-full">
             {cardData.map((item, index) => (
               <div className="w-full">
                 <Card
@@ -96,15 +114,15 @@ const Home = () => {
 
         {/* Section FAQ */}
 
-        <section className="flex flex-col justify-center items-center gap-12">
+        <section className="flex flex-col justify-center items-center gap-12 max-lg:gap-8">
             <SectionTitle text="FAQs"></SectionTitle>
 
-            <div className="flex flex-col md:flex-row items-start gap-12 w-full px-3">
+            <div className="flex flex-row max-lg:flex-col items-start gap-12 max-lg:gap-8 w-full px-3">
 
               {/* Kategori FAQ */}
 
               <div
-                className="w-1/3 flex-shrink-0 bg-no-repeat bg-center bg-cover p-10 flex flex-col items-center
+                className="w-1/3 max-lg:w-full flex-shrink-0 bg-no-repeat bg-center bg-cover p-10 flex flex-col items-center
                            border-t-16 border-b-16 border-border rounded-xl shadow-2xl"
                 style={{
                     backgroundImage: `url(${scrollbg})`,
@@ -167,5 +185,45 @@ const Home = () => {
       </>
     );
 }
+
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a completed state
+    return <p className="text-4xl text-white">🚀 It's Time!</p>;
+  } else {
+    // Render custom countdown UI
+    return (
+      <>
+      <div className="flex flex-col justify-center items-center">
+        <div
+            className="flex justify-center items-center px-8 py-4 m-4 bg-no-repeat bg-center bg-cover w-fit border-l-16 border-r-16 border-border rounded-xl shadow-2xl"
+            style={{ 
+                backgroundImage: `url(${scrollbg})`,
+            }}
+        >
+          <div className="flex flex-row gap-6 text-primary text-5xl font-alice">
+            <div>
+              {String(days).padStart(2, '0')}
+              <span className="block text-sm">Days</span>
+            </div>
+            <div>
+              {String(hours).padStart(2, '0')}
+              <span className="block text-sm">Hours</span>
+            </div>
+            <div>
+              {String(minutes).padStart(2, '0')}
+              <span className="block text-sm">Minutes</span>
+            </div>
+            <div>
+              {String(seconds).padStart(2, '0')}
+              <span className="block text-sm">Seconds</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </>
+    );
+  }
+};
  
 export default Home;

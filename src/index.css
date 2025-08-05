@@ -51,11 +51,17 @@
 
 @layer components {
     .section {
-        @apply px-20 py-20 w-full
+        @apply p-20 w-full
     }
 
     .button-clip {
         clip-path: polygon(13% 0, 88% 0, 100% 50%, 88% 100%, 13% 100%, 0% 50%);
+    }
+}
+
+@media (max-width: 1023px) {
+    .section {
+        @apply p-5 w-full
     }
 }
 

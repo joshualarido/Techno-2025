@@ -50,20 +50,20 @@ const Events = () => {
 
                     {/* BAGIAN DUA KOLOM: POSTER DAN KERTAS (PBP) */}
                     <div
-                        className="flex flex-row w-full bg-opacity-10 shadow-lg overflow-hidden rounded-xl"
+                        className="flex flex-row max-lg:flex-col w-full bg-opacity-10 shadow-lg overflow-hidden rounded-xl"
                     >
                         {/* Bagian Kiri: Poster */}
-                        <div className="flex-shrink-0 w-full md:w-1/2">
+                        <div className="w-1/3 max-lg:w-full max-lg:h-48">
                             <img
                                 src={posterImage}
                                 alt="Event Poster"
-                                className="w-full h-auto object-contain"
+                                className="w-full h-full object-cover"
                             />
                         </div>
 
                         {/* Bagian Kanan: Kertas dengan Background Gambar (PBP) */}
                         <div
-                            className="section flex flex-col justify-start items-center text-center text-text gap-12
+                            className="p-10 w-2/3 max-lg:w-full flex flex-col justify-start items-center text-center text-text gap-12
                                        border-t-16 border-b-16 border-border shadow-2xl"
                             style={{
                                 backgroundImage: `url(${scrollbg})`,
@@ -113,7 +113,7 @@ const Events = () => {
 
                     {/* Bagian Main Show - An Enchanted Guest Awaits */}
                     <div
-                        className="w-2/3 p-12 flex flex-col items-center text-center relative text-text gap-12
+                        className="w-2/3 max-lg:w-full p-12 flex flex-col items-center text-center relative text-text gap-12
                                    border-t-16 border-b-16 border-border shadow-2xl rounded-xl"
                         style={{
                             backgroundImage: `url(${scrollbg})`,
@@ -131,7 +131,7 @@ const Events = () => {
                         </h2>
                         
                         {/* Bagian Gambar Border */}
-                        <div className="flex items-center justify-center w-1/3">
+                        <div className="flex items-center justify-center w-1/3 max-lg:w-full">
                             <img
                                 src={guestBorderImage}
                                 alt="Guest Border"
@@ -149,7 +149,7 @@ const Events = () => {
                         </div>
                     </div>
         
-                    <div className="flex flex-row items-stretch justify-center gap-12 w-full">
+                    <div className="flex flex-row max-lg:flex-col items-stretch justify-center gap-12 w-full">
                         {eventCards.map((item, index) => (
                             <div key={index} className="flex">
                             <Card
