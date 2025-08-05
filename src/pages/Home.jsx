@@ -21,6 +21,7 @@ import Footer from "../components/Footer"
 import SectionTitle from "../components/SectionTitle.jsx";
 import Card from "../components/Card.jsx";
 import { categories, faqData } from "../components/faqData.js";
+import companysponsor from "../assets/sponsorbg.png"
 
 const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState("TECHNO");
