@@ -51,7 +51,7 @@
 
 @layer components {
     .section {
-        @apply px-20 py-20 w-full
+        @apply p-20 w-full
     }
 
     .button-clip {
@@ -59,6 +59,16 @@
     }
 }
 
+@media (max-width: 1023px) {
+    .section {
+        @apply p-5 w-full
+    }
+}
+
 ::-webkit-scrollbar {
   display: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
