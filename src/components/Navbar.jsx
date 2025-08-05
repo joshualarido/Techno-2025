@@ -11,7 +11,8 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="section py-8 px-4 md:px-12 flex justify-between items-center text-white">
+      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/20 py-6 px-4 md:px-12 flex justify-between items-center text-white transition duration-300">
+
         {/* Logo */}
         <img
           src={techno2025logo}
