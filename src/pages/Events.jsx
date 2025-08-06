@@ -9,6 +9,9 @@ import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import SectionTitle from "../components/SectionTitle.jsx";
 import Card from "../components/Card.jsx";
+import expo from "../assets/exp.png";
+import sebelahalsut from "../assets/bgsebelahalsut.png"
+import alsut from "../assets/bgalsut.png"
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -161,6 +164,35 @@ const Events = () => {
                     </div>
 
                 </section>
+                <section className="section flex flex-col items-center gap-12">
+                    <SectionTitle text="Expo"></SectionTitle>
+                    <div className="flex flex-row justify-center items-center gap-12">
+                        <h1 className="text-7xl cursor-pointer"><IoIosArrowBack /></h1>
+
+                        <div className="flex flex-row max-md:flex-col justify-center items-center
+                                        border-r-1 border-l-1 border-t-1 border-b-1 border-border shadow-2xl"
+                        >
+                            <img src={alsut} alt="alsut" className="w-auto h-80 max-md:w-50 object-cover"/>
+
+                            <div
+                            className="h-80 flex flex-col justify-between items-center max-lg:justify-center bg-no-repeat bg-center bg-cover
+                                        border-y-30 border-border p-2 max-md:h-40 max-md:w-50 w-100"
+                            style={{ backgroundImage: `url(${scrollbg})` }}
+                            >
+                                <h2 className="text-6xl max-lg:text-3xl max-md:text-lg" style={{ color: '#95168A' }}><strong>Alam Sutera</strong></h2>
+                                <ul className="text-2xl max-lg:text-lg max-md:text-sm" style={{ color: '#694B21' }}>
+                                    <li>📅 29 - 31 Agustus 2024</li>
+                                    <li>🕒 09.00 - 11.00</li>
+                                    <li>📍 Binus @Alam Sutera</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <h1 className="text-7xl cursor-pointer"><IoIosArrowForward /></h1>
+                    </div>
+                </section>    
             </div>
         </>
     );
