@@ -21,6 +21,8 @@ import Footer from "../components/Footer"
 import SectionTitle from "../components/SectionTitle.jsx";
 import Card from "../components/Card.jsx";
 import { categories, faqData } from "../components/faqData.js";
+import companysponsor from "../assets/sponsorbg.png"
+import sponsortxt from "../assets/sponsortxt.png"
 
 const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState("TECHNO");
@@ -198,6 +200,29 @@ const Home = () => {
             </div>
           </section>
         </div>
+
+        {/* SPONSORS / CONTACT SECTION */}
+
+        <section className="bg-no-repeat bg-center bg-cover py-16 px-6 md:px-12 w-full h-full" style={{backgroundImage: `url(${scrollbg})`}}>
+            <div className="justify-center items-center">
+                <img src={sponsortxt} alt="sponsor" className="w-180 h-auto"/>
+
+                <div className="flex justify-center items-center max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+                     style={{padding:"1.5rem"}}>
+                        <img src={companysponsor} alt="sponsor a" className="w-180 h-auto"/>
+                        <img src={companysponsor} alt="sponsor b" className="w-180 h-auto"/>
+                        <img src={companysponsor} alt="sponsor c" className="w-180 h-auto"/>
+                </div>
+            </div>
+            <div className="max-w-7xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-bold text-black-800 mb-10 mt-35">
+                    Contacts:
+                </h2>
+                <p className="text-2xl mb-5"><strong>WA:</strong> your number</p>
+                <p className="text-2xl mb-5"><strong>IG:</strong> your account</p>
+                <p className="text-2xl mb-5"><strong>EMAIL:</strong> your.username@gmail.com</p>
+            </div>
+        </section>
       </>
     );
 }
