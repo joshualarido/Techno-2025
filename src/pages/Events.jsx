@@ -32,7 +32,7 @@ const Events = () => {
         <>
             <div
                 /*background utama halaman*/
-                className="flex flex-col bg-no-repeat bg-center bg-cover w-screen"
+                className="flex flex-col bg-no-repeat bg-center bg-cover w-screen pt-20"
                 style={{
                     backgroundImage: `
                         linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%),

@@ -46,7 +46,7 @@ const Home = () => {
         {/* Navbar and Content on top of video */}
         <Navbar />
 
-        <section className="relative w-full h-fit overflow-hidden">
+        <section className="relative w-full h-fit overflow-hidden pt-12">
           {/* Background Video */}
           <video
             className="absolute top-0 left-0 w-full h-full object-cover scale-150 z-[-2]"
@@ -57,7 +57,7 @@ const Home = () => {
           />
 
           {/* Black Overlay */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black/60 backdrop-blur-sm z-[-1]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm z-[-1]" />
 
           <div className="flex flex-col justify-center items-center gap-6 w-full pt-32 pb-20">
             <img
