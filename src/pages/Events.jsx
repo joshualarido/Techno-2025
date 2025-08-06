@@ -172,19 +172,19 @@ const Events = () => {
                         <div className="flex flex-row max-md:flex-col justify-center items-center
                                         border-r-1 border-l-1 border-t-1 border-b-1 border-border shadow-2xl"
                         >
-                            <img src={alsut} alt="alsut" className="w-auto h-80 max-md:w-50 object-cover"/>
+                            <img src={alsut} alt="alsut" className="w-auto h-120 max-lg:h-80 max-lg:w-auto max-md:h-auto max-md:w-60 object-cover"/>
 
                             <div
-                            className="h-80 flex flex-col justify-between items-center max-lg:justify-center bg-no-repeat bg-center bg-cover
-                                        border-y-30 border-border p-2 max-md:h-40 max-md:w-50 w-100"
+                            className="h-120 flex flex-col justify-between items-center max-lg:justify-center bg-no-repeat bg-center bg-cover
+                                        border-y-30 border-border p-2 max-lg:h-80 max-lg:w-100 max-md:h-48 max-md:w-60 w-150"
                             style={{ backgroundImage: `url(${scrollbg})` }}
                             >
-                                <h2 className="text-6xl max-lg:text-3xl max-md:text-lg" style={{ color: '#95168A' }}><strong>Alam Sutera</strong></h2>
-                                <ul className="text-2xl max-lg:text-lg max-md:text-sm" style={{ color: '#694B21' }}>
-                                    <li>📅 29 - 31 Agustus 2024</li>
-                                    <li>🕒 09.00 - 11.00</li>
-                                    <li>📍 Binus @Alam Sutera</li>
-                                </ul>
+                                <h2 className="text-7xl max-lg:text-5xl max-md:text-lg" style={{ color: '#95168A' }}><strong>Alam Sutera</strong></h2>
+                                <p className="text-3xl max-lg:text-xl max-md:text-sm" style={{ color: '#694B21' }}>
+                                    📅 29 - 31 Agustus 2024 <br></br>
+                                    🕒 09.00 - 11.00<br></br>
+                                    📍 Binus @Alam Sutera
+                                </p>
 
                             </div>
 
