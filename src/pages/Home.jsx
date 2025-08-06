@@ -22,6 +22,7 @@ import SectionTitle from "../components/SectionTitle.jsx";
 import Card from "../components/Card.jsx";
 import { categories, faqData } from "../components/faqData.js";
 import companysponsor from "../assets/sponsorbg.png"
+import sponsortxt from "../assets/sponsortxt.png"
 
 const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState("TECHNO");
@@ -203,10 +204,8 @@ const Home = () => {
         {/* SPONSORS / CONTACT SECTION */}
 
         <section className="bg-no-repeat bg-center bg-cover py-16 px-6 md:px-12 w-full h-full" style={{backgroundImage: `url(${scrollbg})`}}>
-            <div className="max-w-7xl mx-auto text-center justify-center items-center">
-                <h2 className="text-4xl md:text-6xl font-bold text-black-800 mb-10">
-                    Our Sponsors:
-                </h2>
+            <div className="justify-center items-center">
+                <img src={sponsortxt} alt="sponsor" className="w-180 h-auto"/>
 
                 <div className="flex justify-center items-center max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
                      style={{padding:"1.5rem"}}>
