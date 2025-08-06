@@ -11,18 +11,18 @@ import finalbg from "../assets/finalbg.png"
 // import Judul from "../assets/Judul.png"
 // import butterfly from "../assets/Kupu-Kupu.png"
 // import cardBg from "../assets/Cards.png"
-// import roti from "../assets/bread_icon.png"
+import breadIcon from "../assets/bread_icon.png"
 // import bunny from "../assets/Bunny.png"
 // import cardFaq from "../assets/CardFaq.png"
 
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
-import Footer from "../components/Footer"
 import SectionTitle from "../components/SectionTitle.jsx";
 import Card from "../components/Card.jsx";
 import { categories, faqData } from "../components/faqData.js";
-import companysponsor from "../assets/sponsorbg.png"
-import sponsortxt from "../assets/sponsortxt.png"
+import { FaInstagram, FaTiktok } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+
 
 const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState("TECHNO");
@@ -111,8 +111,10 @@ const Home = () => {
         {/* BENEFIT SECTION */}
 
         <div
-          className="section relative w-full bg-no-repeat bg-top bg-cover flex flex-col items-center justify-start gap-20"
-          style={{ backgroundImage: `url(${finalbg})` }}
+          className="section relative w-full bg-no-repeat bg-bottom bg-cover flex flex-col items-center justify-start gap-32"
+          style={{ 
+            backgroundImage: `url(${finalbg})`,
+          }}
         >
           <section className="flex flex-col justify-center items-center gap-12 max-lg:gap-8">
             {/* BENEFIT */}
@@ -199,30 +201,86 @@ const Home = () => {
               </div>
             </div>
           </section>
+          
+          {/* SPONSORS / CONTACT SECTION */}
+
+          <section className="w-full h-full flex flex-col justify-center items-center gap-16 max-lg:pb-12 pt-64">
+            <div className="flex flex-col justify-center items-center gap-4">
+              <SectionTitle text="Our Sponsors"></SectionTitle>
+              <div className="grid grid-cols-4 max-lg:grid-cols-2 justify-center items-center gap-12">
+                <img src={breadIcon} alt="" className="w-32"/>
+                <img src={breadIcon} alt="" className="w-32"/>
+                <img src={breadIcon} alt="" className="w-32"/>
+                <img src={breadIcon} alt="" className="w-32"/>
+                <img src={breadIcon} alt="" className="w-32"/>
+                <img src={breadIcon} alt="" className="w-32"/>
+                <img src={breadIcon} alt="" className="w-32"/>
+                <img src={breadIcon} alt="" className="w-32"/>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-4">
+              <SectionTitle text="Powered By"></SectionTitle>
+              <div className="">
+                <img src={breadIcon} alt="" className="w-64"/>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-4">
+              <SectionTitle text="Contact Us"></SectionTitle>
+              <div className="flex flex-col justify-center items-center gap-4">
+                <a
+                  className="
+                    text-lg md:text-2xl 
+                    text-text 
+                    px-3 py-1 md:px-6 md:py-4 
+                    bg-gradient-to-br from-btn-primary to-btn-secondary 
+                    hover:from-btn-secondary hover:to-btn-primary 
+                    rounded-xl border-2 border-border 
+                    hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
+                    transition duration-300
+                    flex flex-row justify-center items-center gap-4
+                  "
+                >
+                  <h1 className="text-3xl max-lg:text-2xl text-text"><FaInstagram /></h1> @techno2025official
+                </a>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-12">
+                <a
+                  className="
+                    text-lg md:text-2xl 
+                    text-text 
+                    px-3 py-1 md:px-6 md:py-4 
+                    bg-gradient-to-br from-btn-primary to-btn-secondary 
+                    hover:from-btn-secondary hover:to-btn-primary 
+                    rounded-xl border-2 border-border 
+                    hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
+                    transition duration-300
+                    flex flex-row justify-center items-center gap-4
+                  "
+                >
+                  <h1 className="text-3xl max-lg:text-2xl text-text"><FaTiktok /></h1> @techno.himti
+                </a>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-12">
+                <a
+                  className="
+                    text-lg md:text-2xl 
+                    text-text 
+                    px-3 py-1 md:px-6 md:py-4 
+                    bg-gradient-to-br from-btn-primary to-btn-secondary 
+                    hover:from-btn-secondary hover:to-btn-primary 
+                    rounded-xl border-2 border-border 
+                    hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
+                    transition duration-300
+                    flex flex-row justify-center items-center gap-4
+                  "
+                >
+                  <h1 className="text-3xl max-lg:text-2xl text-text"><FiMail /></h1> himtitechno24@gmail.com
+                </a>
+              </div>
+            </div>
+          </section>
         </div>
 
-        {/* SPONSORS / CONTACT SECTION */}
-
-        <section className="bg-no-repeat bg-center bg-cover py-16 px-6 md:px-12 w-full h-full" style={{backgroundImage: `url(${scrollbg})`}}>
-            <div className="justify-center items-center">
-                <img src={sponsortxt} alt="sponsor" className="w-180 h-auto"/>
-
-                <div className="flex justify-center items-center max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-                     style={{padding:"1.5rem"}}>
-                        <img src={companysponsor} alt="sponsor a" className="w-180 h-auto"/>
-                        <img src={companysponsor} alt="sponsor b" className="w-180 h-auto"/>
-                        <img src={companysponsor} alt="sponsor c" className="w-180 h-auto"/>
-                </div>
-            </div>
-            <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-bold text-black-800 mb-10 mt-35">
-                    Contacts:
-                </h2>
-                <p className="text-2xl mb-5"><strong>WA:</strong> your number</p>
-                <p className="text-2xl mb-5"><strong>IG:</strong> your account</p>
-                <p className="text-2xl mb-5"><strong>EMAIL:</strong> your.username@gmail.com</p>
-            </div>
-        </section>
       </>
     );
 }
