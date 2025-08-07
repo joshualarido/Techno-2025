@@ -5,6 +5,8 @@ import scrollbg from "../assets/scrollbg.png";
 import guestBorderImage from "../assets/guestborder.png";
 import finalbg from "../assets/finalbg.png"
 import artist from "../assets/artist.png"
+import artistsecret from "../assets/artistsecret.png"
+
 
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
@@ -139,7 +141,7 @@ const Events = () => {
                         {/* Bagian Gambar Border */}
                         <div className="flex items-center justify-center w-1/2 max-lg:w-full">
                             <img
-                                src={artist}
+                                src={artistsecret}
                                 alt="Guest Border"
                                 className="w-full h-full object-contain"
                             />                                
@@ -150,7 +152,7 @@ const Events = () => {
                             <p
                                 className="text-2xl text-center"
                             >
-                                We will invite Nadine Abigail to our main event, bringing her talents and voice to the event. Don't miss out on her performances!
+                                Who might we invite to this year's TECHNO event? Stay tuned to find out!
                             </p>
                         </div>
                     </div>

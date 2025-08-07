@@ -11,7 +11,7 @@ import Events from "./pages/Events"
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Techno-2025/">
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/events" element={<Events/>}></Route>
