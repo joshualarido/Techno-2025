@@ -15,7 +15,7 @@ const Card = ({ title, description, icon = breadIcon }) => {
                 backgroundRepeat: 'no-repeat',
             }}
         >
-            <img src={icon} alt={`${title} Icon`} className="mb-8 w-1/2" />
+            <img src={icon} alt={`${title} Icon`} className="mb-8 w-40 max-lg:w-32" />
             <h3
                 className="text-5xl font-chancery mb-4 text-primary"
             >

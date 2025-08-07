@@ -68,10 +68,13 @@ const Home = () => {
               className="w-1/3 max-lg:w-2/3"
             />
             <Countdown
-              date={new Date("2025-09-07T00:00:00")}
+              // date={new Date("2025-09-07T00:00:00")}
+              date={new Date("2025-09-07T09:00:00")}
               renderer={renderer}
             />
-            <Button text="Learn more →" />
+            <a href="#about">
+              <Button text="Learn more →"/>
+            </a>
           </div>
         </section>
 
@@ -237,8 +240,10 @@ const Home = () => {
                     rounded-xl border-2 border-border 
                     hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
                     transition duration-300
-                    flex flex-row justify-center items-center gap-4
+                    flex flex-row justify-center items-center gap-4 cursor-pointer
                   "
+                  href="https://www.instagram.com/techno2025official/"
+                  target="_blank"
                 >
                   <h1 className="text-3xl max-lg:text-2xl text-text"><FaInstagram /></h1> @techno2025official
                 </a>
@@ -254,8 +259,10 @@ const Home = () => {
                     rounded-xl border-2 border-border 
                     hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
                     transition duration-300
-                    flex flex-row justify-center items-center gap-4
+                    flex flex-row justify-center items-center gap-4 cursor-pointer
                   "
+                  href="https://www.tiktok.com/@techno.himti"
+                  target="_blank"
                 >
                   <h1 className="text-3xl max-lg:text-2xl text-text"><FaTiktok /></h1> @techno.himti
                 </a>
@@ -271,8 +278,10 @@ const Home = () => {
                     rounded-xl border-2 border-border 
                     hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
                     transition duration-300
-                    flex flex-row justify-center items-center gap-4
+                    flex flex-row justify-center items-center gap-4 cursor-pointer
                   "
+                  href="mailto:himtitechno24@gmail.com"
+                  target="_blank"
                 >
                   <h1 className="text-3xl max-lg:text-2xl text-text"><FiMail /></h1> himtitechno24@gmail.com
                 </a>
@@ -288,7 +297,7 @@ const Home = () => {
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
     // Render a completed state
-    return <p className="text-4xl text-white">🚀 It's Time!</p>;
+    return <SectionTitle text="Live Now!"></SectionTitle>;
   } else {
     // Render custom countdown UI
     return (

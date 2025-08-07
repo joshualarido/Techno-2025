@@ -12,7 +12,7 @@ const SectionTitle = ({ text }) => {
                 backgroundImage: `url(${scrollbg})`,
             }}
         >
-            <h1 className="text-6xl max-lg:text-5xl text-primary">
+            <h1 className="text-6xl max-lg:text-5xl text-primary text-center">
                 {text}
             </h1>
         </div>

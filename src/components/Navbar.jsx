@@ -56,7 +56,7 @@ const Navbar = () => {
 
       {/* Mobile Nav Panel */}
       {isOpen && (
-        <div className="md:hidden px-6 pb-6 flex flex-col items-center gap-8 text-white">
+        <div className="fixed top-22 z-50 md:hidden backdrop-blur-md bg-sky-950/20 w-full p-6 flex flex-col items-center gap-8 text-white">
           <Link to="/" onClick={() => setIsOpen(false)}>
             <p className="text-lg">《 Home 》</p>
           </Link>

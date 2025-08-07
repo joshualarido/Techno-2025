@@ -1,4 +1,4 @@
-const Button = ({ text }) => {
+const Button = ({ text, link = "#" }) => {
   return (
     <a
       className="
@@ -9,7 +9,7 @@ const Button = ({ text }) => {
         hover:from-btn-secondary hover:to-btn-primary 
         rounded-xl border-2 border-border 
         hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
-        transition duration-300
+        transition duration-300 cursor-pointer
       "
     >
       {text}
