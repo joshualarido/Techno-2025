@@ -193,7 +193,7 @@ const Home = () => {
                     </li>
                   ))}
                   <div className="w-full flex justify-end px-4 pt-10">
-                    <Link to="/faq">
+                    <Link to="/faq" onClick={handleMoreFaq}>
                       <Button text="More FAQs →" />
                     </Link>
                   </div>
