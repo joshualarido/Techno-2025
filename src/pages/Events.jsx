@@ -14,7 +14,11 @@ import SectionTitle from "../components/SectionTitle.jsx";
 import Card from "../components/Card.jsx";
 import expo from "../assets/exp.png";
 import sebelahalsut from "../assets/bgsebelahalsut.png"
+import breadIcon from "../assets/bread_icon.png"
+import cookieIcon from "../assets/cookie1.png"
 import alsut from "../assets/bgalsut.png"
+import caterpillar1 from "../assets/caterpillar1.png"
+import leaves from "../assets/leaves.png"
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -22,15 +26,13 @@ const Events = () => {
     const eventCards = [
         {
             title: "Talkshow",
-            description: `A talkshow titled "Journey to 'Atlantis': Ethics and Resilience in AI" for SoCS students to understand further about AI, which is now popular in many fields.`,
+            description: `A talkshow titled "Down the AI Rabbit Hole: Exploring the Academic Shift in the Age of AI" for SoCS students to understand further about AI, which is now popular in many fields.`,
+            icon: breadIcon
         },
         {
             title: "Games",
-            description: "Throughout the event, there will be several games you can win to further know about HIMTI and strengthen your relations with friends. And psst, there are prizes too you know.",
-        },
-        {
-            title: "Side Quest",
-            description: "Love making contents? Then you can participate in TECHNO's side quest to make a content about TECHNO. You can learn more about Side Quest here",
+            description: "Throughout the event, there will be several games you can win to further know about HIMTI and strengthen your relations with friends. And psst... there are prizes too you know!",
+            icon: cookieIcon
         },
     ];
 
@@ -56,8 +58,23 @@ const Events = () => {
 
                     {/* BAGIAN DUA KOLOM: POSTER DAN KERTAS (PBP) */}
                     <div
-                        className="flex flex-row max-lg:flex-col w-full bg-opacity-10 shadow-lg overflow-hidden rounded-xl"
+                        className="relative flex flex-row max-lg:flex-col w-full bg-opacity-10 shadow-lg rounded-xl"
                     >
+                        
+                        <img
+                            src={caterpillar1}
+                            alt="caterpillar1"
+                            className="
+                            absolute 
+                            top-[-80px] max-lg:top-[-40px] 
+                            right-[-30px] max-lg:right-[-20px]
+                            w-50 max-lg:w-32
+                            rotate-left-right
+                            scale-x-[-1]
+                            "
+                            style={{ zIndex: 5 }}
+                        />
+
                         {/* Bagian Kiri: Poster */}
                         <div className="w-1/3 max-lg:w-full max-lg:h-48">
                             <img
@@ -84,7 +101,7 @@ const Events = () => {
                                 <br></br><br></br>
                                 In this learning session, the material taught is basic programming languages C and Python (for Senayan Region) which will be useful for you freshmen of the School of Computer Science who have never tried coding.
                                 <br></br><br></br>
-                                In addition, PBP also will hold a competitive programming competition for beginners, namely <strong>Algorena</strong>! Of course, there are attractive prizes for the winners. Come on, join PBP!
+                                In addition, PBP also will hold a competitive programming competition for beginners, namely <strong>Algorena 2.0!</strong> Of course, there are attractive prizes for the winners. Come on, join PBP!
                             </p>
 
                             <div className="flex flex-row justify-center items-center hidden">
@@ -129,6 +146,20 @@ const Events = () => {
                             backgroundRepeat: 'no-repeat',
                         }}
                     >
+
+                        <img
+                            src={leaves} // change to any decorative image you want
+                            alt="decoration"
+                            className="
+                            absolute 
+                            top-[-50px] max-lg:top-[-30px] 
+                            left-[-30px] max-lg:left-[-15px]
+                            w-40 max-lg:w-30
+                            rotate-left-right
+                            "
+                            style={{ zIndex: 5 }}
+                        />
+
                         <h2
                             className="text-5xl font-chancery"
                             style={{
@@ -163,6 +194,7 @@ const Events = () => {
                             <Card
                                 title={item.title}
                                 description={item.description}
+                                icon={item.icon}
                             />
                             </div>
                         ))}

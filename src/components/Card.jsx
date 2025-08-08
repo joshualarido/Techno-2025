@@ -2,8 +2,10 @@ import React from 'react';
 
 import scrollbg from '../assets/scrollbg.png';
 import breadIcon from '../assets/bread_icon.png';
+import cookieIcon from "../assets/cookie1.png"
+import leafIcon from "../assets/leaf1.png"
 
-const Card = ({ title, description, icon = breadIcon }) => {
+const Card = ({ title, description, icon }) => {
     return (
         <div
             className="flex flex-col items-center px-8 py-12 relative text-center shadow-2xl

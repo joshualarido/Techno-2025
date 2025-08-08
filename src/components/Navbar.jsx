@@ -14,11 +14,13 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-sky-950/20 py-4 px-4 md:px-12 flex justify-between items-center text-white transition duration-300">
 
         {/* Logo */}
-        <img
-          src={techno2025logo}
-          alt="technologo"
-          className="w-1/4 md:w-1/6 lg:w-1/12"
-        />
+        <Link className="w-1/4 md:w-1/6 lg:w-1/12" to="/">
+          <img
+            src={techno2025logo}
+            alt="technologo"
+            className="w-full cursor-pointer"
+          />
+        </Link>
 
         {/* Desktop Nav Links */}
         <div className="max-md:hidden md:flex flex-row justify-center items-center gap-10">

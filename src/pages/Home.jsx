@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 import Countdown from "react-countdown";
 
 import techno2025logo from "../assets/techno2025logo.png";
-import herobg from "../assets/herobg.png"
 import videobg from "../assets/videohero.mp4"
 import technoimg from "../assets/technoimg.png"
 import scrollbg from "../assets/scrollbg.png"
 import finalbg from "../assets/finalbg.png"
-// import Judul from "../assets/Judul.png"
-// import butterfly from "../assets/Kupu-Kupu.png"
-// import cardBg from "../assets/Cards.png"
+import leaves from "../assets/leaves.png"
+import breadbutterfly from "../assets/breadbutterfly.png"
+import caterpillar1 from "../assets/caterpillar1.png"
 import breadIcon from "../assets/bread_icon.png"
-// import bunny from "../assets/Bunny.png"
-// import cardFaq from "../assets/CardFaq.png"
+import cookieIcon from "../assets/cookie1.png"
+import leafIcon from "../assets/leaf1.png"
+import cookie2 from "../assets/cookie2.png"
 
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
@@ -31,14 +31,17 @@ const Home = () => {
       {
         title: "Starter Pack",
         description: `Freshmen will receive PBP (Pengenalan Bahasa Pemrograman) training as a provision before entering the first semester lectures and to teach the basics of programming.`,
+        icon: breadIcon,
       },
       {
         title: "Himti Kit",
         description: `After following the TECHNO Main Event, Freshmen will be provided with supplies in the form of a HIMTI KIT, which is a package containing a summary of courses and a collection of software that supports SoCS student lectures`,
+        icon: cookieIcon,
       },
       {
         title: "SoCS Inauguration",
         description: `One of the series of TECHNO events is the inauguration of BINUS University's SoCS freshmen which is officially held under the SoCS faculty. Therefore, TECHNO is specifically for Binusian SoCS students.`,
+        icon: leafIcon,
       },
     ];
 
@@ -65,7 +68,7 @@ const Home = () => {
             <img
               src={techno2025logo}
               alt="herologo"
-              className="w-1/3 max-lg:w-2/3"
+              className="w-1/3 max-lg:w-2/3 bob-animation"
             />
             <Countdown
               // date={new Date("2025-09-07T00:00:00")}
@@ -81,9 +84,21 @@ const Home = () => {
         {/* WHAT IS TECHNO SECTION */}
 
         <section
-          className="flex flex-row max-lg:flex-col justify-center w-full h-full"
+          className="relative flex flex-row max-lg:flex-col justify-center w-full h-full"
           id="about"
         >
+          <img
+            src={breadbutterfly} 
+            alt="decorative"
+            className="
+              absolute 
+              top-[-60px] max-lg:top-[-30px] right-4 
+              w-20 sm:w-24 md:w-28 lg:w-32 xl:w-60
+              rotate-left-right
+            "
+            style={{ zIndex: 5 }}
+          />
+
           <div>
             <img
               src={technoimg}
@@ -93,7 +108,7 @@ const Home = () => {
           </div>
           <div
             className="h-full flex flex-col justify-between items-start max-lg:items-center gap-20 max-lg:gap-10 bg-no-repeat bg-center bg-cover
-                            border-y-30 border-border p-20 max-lg:p-10 w-full"
+                        border-y-30 border-border p-20 max-lg:p-10 w-full"
             style={{ backgroundImage: `url(${scrollbg})` }}
           >
             <h3 className="text-7xl max-lg:text-5xl text-primary max-lg:text-center">
@@ -105,7 +120,7 @@ const Home = () => {
               inaugurate freshmen of the BINUS University School of Computer
               Science (SOCS).
             </p>
-            <Link to="/">
+            <Link to="https://bit.ly/TECHNO2025RegisGuide" target="_blank">
               <Button text="Guidebook →"></Button>
             </Link>
           </div>
@@ -121,16 +136,40 @@ const Home = () => {
         >
           <section className="flex flex-col justify-center items-center gap-12 max-lg:gap-8">
             {/* BENEFIT */}
-
             <SectionTitle text="Benefits"></SectionTitle>
 
-            <div className="flex flex-row max-lg:flex-col items-stretch justify-center gap-12 w-full max-lg:w-2/3 max-md:w-full">
+            <div className="relative flex flex-row max-lg:flex-col items-stretch justify-center gap-12 w-full max-lg:w-2/3 max-md:w-full">
+            
+              <img
+                src={caterpillar1}
+                alt="cookie2"
+                className="
+                  absolute 
+                  top-[-100px] max-lg:top-[-50px] left-[-30px] max-lg:left-[-20px]
+                  w-50 max-lg:w-32
+                  rotate-left-right
+                "
+                style={{ zIndex: 5 }}
+              />
+
+              <img
+                src={leaves}
+                alt="leaves"
+                className="
+                  absolute 
+                  bottom-[-50px] max-lg:bottom-[-30px] right-[-30px] max-lg:right-[-20px]
+                  w-42 max-lg:w-32
+                  rotate-left-right
+                "
+                style={{ zIndex: 5 }}
+              />
+
               {cardData.map((item, index) => (
-                <div className="w-full">
+                <div key={index} className="w-full">
                   <Card
-                    key={index}
                     title={item.title}
                     description={item.description}
+                    icon={item.icon}
                   />
                 </div>
               ))}
