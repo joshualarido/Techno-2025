@@ -11,8 +11,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/20 py-6 px-4 md:px-12 flex justify-between items-center text-white transition duration-300">
-
+      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-sky-950/20 py-4 px-4 md:px-12 flex justify-between items-center text-white transition duration-300">
         {/* Logo */}
         <img
           src={techno2025logo}
@@ -32,15 +31,20 @@ const Navbar = () => {
               《 Events 》
             </p>
           </Link>
+          <Link to="/faq">
+            <p className="text-xl md:text-2xl hover:drop-shadow-[0_5px_15px_rgba(255,215,0,1)]">
+              《 Faqs 》
+            </p>
+          </Link>
         </div>
-        
+
         <a
-        href="https://registration.himtibinus.or.id"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="max-md:hidden "
+          href="https://registration.himtibinus.or.id"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="max-md:hidden "
         >
-        <Button text="Register" />
+          <Button text="Register" />
         </a>
 
         {/* Hamburger Icon (Mobile only) */}
@@ -56,12 +60,15 @@ const Navbar = () => {
 
       {/* Mobile Nav Panel */}
       {isOpen && (
-        <div className="md:hidden px-6 pb-6 flex flex-col items-center gap-8 text-white">
+        <div className="fixed top-22 z-50 md:hidden backdrop-blur-md bg-sky-950/20 w-full p-6 flex flex-col items-center gap-8 text-white">
           <Link to="/" onClick={() => setIsOpen(false)}>
             <p className="text-lg">《 Home 》</p>
           </Link>
           <Link to="/events" onClick={() => setIsOpen(false)}>
             <p className="text-lg">《 Events 》</p>
+          </Link>
+          <Link to="/faq" onClick={() => setIsOpen(false)}>
+            <p className="text-lg">《 Faqs 》</p>
           </Link>
           <a
             href="https://registration.himtibinus.or.id"
