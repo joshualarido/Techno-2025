@@ -1,20 +1,13 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Countdown from "react-countdown";
-import { useNavigate } from "react-router-dom";
 
 import techno2025logo from "../assets/techno2025logo.png";
-import herobg from "../assets/herobg.png";
 import videobg from "../assets/videohero.mp4";
 import technoimg from "../assets/technoimg.png";
 import scrollbg from "../assets/scrollbg.png";
 import finalbg from "../assets/finalbg.png";
-// import Judul from "../assets/Judul.png"
-// import butterfly from "../assets/Kupu-Kupu.png"
-// import cardBg from "../assets/Cards.png"
 import breadIcon from "../assets/bread_icon.png";
-// import bunny from "../assets/Bunny.png"
-// import cardFaq from "../assets/CardFaq.png"
 
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
@@ -33,7 +26,6 @@ const Home = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -41,31 +33,32 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleMoreFaq = () => {
-    window.scrollTo({ top: 0, behavior: "instant" }); 
+    window.scrollTo({ top: 0, behavior: "instant" });
     navigate("/faq");
   };
 
   const cardData = [
     {
       title: "Starter Pack",
-      description: `Freshmen will receive PBP (Pengenalan Bahasa Pemrograman) training as a provision before entering the first semester lectures and to teach the basics of programming.`,
+      description:
+        "Freshmen will receive PBP (Pengenalan Bahasa Pemrograman) training as a provision before entering the first semester lectures and to teach the basics of programming.",
     },
     {
       title: "Himti Kit",
-      description: `After following the TECHNO Main Event, Freshmen will be provided with supplies in the form of a HIMTI KIT, which is a package containing a summary of courses and a collection of software that supports SoCS student lectures`,
+      description:
+        "After following the TECHNO Main Event, Freshmen will be provided with supplies in the form of a HIMTI KIT, which is a package containing a summary of courses and a collection of software that supports SoCS student lectures",
     },
     {
       title: "SoCS Inauguration",
-      description: `One of the series of TECHNO events is the inauguration of BINUS University's SoCS freshmen which is officially held under the SoCS faculty. Therefore, TECHNO is specifically for Binusian SoCS students.`,
+      description:
+        "One of the series of TECHNO events is the inauguration of BINUS University's SoCS freshmen which is officially held under the SoCS faculty. Therefore, TECHNO is specifically for Binusian SoCS students.",
     },
   ];
 
   return (
     <>
-      {/* HERO SECTION */}
-      {/* Navbar and Content on top of video */}
+      {/* HERO SECTION (kept newer video/overlay/countdown) */}
       <Navbar />
-
       <section className="relative w-full h-fit overflow-hidden pt-12">
         {/* Background Video */}
         <video
@@ -75,10 +68,8 @@ const Home = () => {
           loop
           muted
         />
-
         {/* Black Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm z-[-1]" />
-
         <div className="flex flex-col justify-center items-center gap-6 w-full pt-32 pb-20">
           <img
             src={techno2025logo}
@@ -86,7 +77,6 @@ const Home = () => {
             className="w-1/3 max-lg:w-2/3"
           />
           <Countdown
-            // date={new Date("2025-09-07T00:00:00")}
             date={new Date("2025-09-07T09:00:00")}
             renderer={renderer}
           />
@@ -96,8 +86,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* WHAT IS TECHNO SECTION */}
-
+      {/* WHAT IS TECHNO SECTION (kept fuller content/version) */}
       <section
         className="flex flex-row max-lg:flex-col justify-center w-full h-full"
         id="about"
@@ -111,7 +100,7 @@ const Home = () => {
         </div>
         <div
           className="h-full flex flex-col justify-between items-start max-lg:items-center gap-20 max-lg:gap-10 bg-no-repeat bg-center bg-cover
-                            border-y-30 border-border p-20 max-lg:p-10 w-full"
+                      border-y-30 border-border p-20 max-lg:p-10 w-full"
           style={{ backgroundImage: `url(${scrollbg})` }}
         >
           <h3 className="text-7xl max-lg:text-5xl text-primary max-lg:text-center">
@@ -122,14 +111,13 @@ const Home = () => {
             a joint event organized by HIMTI BINUS to welcome and inaugurate
             freshmen of the BINUS University School of Computer Science (SOCS).
           </p>
-          <Link to="/">
-            <Button text="Guidebook →"></Button>
+          <Link to="https://bit.ly/TECHNO2025RegisGuide" target="_blank">
+            <Button text="Guidebook →" />
           </Link>
         </div>
       </section>
 
-      {/* BENEFIT SECTION */}
-
+      {/* BENEFITS + FAQ + SPONSORS / CONTACT (kept consolidated newer layout) */}
       <div
         className="section relative w-full bg-no-repeat bg-bottom bg-cover flex flex-col items-center justify-start gap-32 max-lg:min-h-[10px]"
         style={{
@@ -137,35 +125,26 @@ const Home = () => {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "bottom",
           backgroundSize: isMobile ? "150% 6300px" : "cover",
-        
         }}
       >
+        {/* BENEFITS */}
         <section className="flex flex-col justify-center items-center gap-12 max-lg:gap-8">
-          {/* BENEFIT */}
-
-          <SectionTitle text="Benefits"></SectionTitle>
-
+          <SectionTitle text="Benefits" />
           <div className="flex flex-row max-lg:flex-col items-stretch justify-center gap-12 w-full max-lg:w-2/3 max-md:w-full">
             {cardData.map((item, index) => (
-              <div className="w-full">
-                <Card
-                  key={index}
-                  title={item.title}
-                  description={item.description}
-                />
+              <div key={index} className="w-full">
+                <Card title={item.title} description={item.description} />
               </div>
             ))}
           </div>
         </section>
 
-        {/* Section FAQ */}
-
+        {/* FAQ */}
         <section className="flex flex-col justify-center items-center gap-12 max-lg:gap-8">
-          <SectionTitle text="FAQs"></SectionTitle>
+          <SectionTitle text="FAQs" />
           {!isMobile && (
             <div className="flex flex-row max-lg:flex-col items-start gap-12 max-lg:gap-8 w-full px-3">
-              {/* Kategori FAQ */}
-
+              {/* Categories */}
               <div
                 className="w-1/3 max-lg:w-full flex-shrink-0 bg-no-repeat bg-center bg-cover p-10 flex flex-col items-center
                            border-t-16 border-b-16 border-border rounded-xl shadow-2xl"
@@ -200,8 +179,7 @@ const Home = () => {
                 </ul>
               </div>
 
-              {/* List FAQ */}
-
+              {/* List */}
               <div
                 className="bg-no-repeat bg-cover p-10 flex flex-col gap-8 overflow-y-auto relative h-auto
                            border-t-16 border-b-16 border-border rounded-xl shadow-2xl"
@@ -230,13 +208,13 @@ const Home = () => {
               </div>
             </div>
           )}
-          {/* FAQ MOBILE/TABLET VERSION */}
 
+          {/* FAQ MOBILE/TABLET */}
           {isMobile && (
             <>
               <div
                 className="w-full bg-no-repeat bg-cover p-6 flex flex-col gap-6
-        border-t-8 border-b-8 border-border rounded-xl shadow-xl"
+                           border-t-8 border-b-8 border-border rounded-xl shadow-xl"
                 style={{
                   backgroundImage: `url(${scrollbg})`,
                   backgroundSize: "100% 100%",
@@ -250,7 +228,7 @@ const Home = () => {
                     }))
                   )
                   .slice(0, 4)
-                  .map((faq, index) => (
+                  .map((faq) => (
                     <div
                       key={faq.key}
                       className="bg-[rgba(255,255,255,0.15)] rounded-xl p-4 backdrop-blur-md border border-border"
@@ -283,12 +261,12 @@ const Home = () => {
           )}
         </section>
 
-        {/* SPONSORS / CONTACT SECTION */}
-
+        {/* SPONSORS / CONTACT */}
         <section className="w-full h-full flex flex-col justify-center items-center gap-16 max-lg:pb-12 pt-30">
           <div className="flex flex-col justify-center items-center gap-4">
-            <SectionTitle text="Our Sponsors"></SectionTitle>
+            <SectionTitle text="Our Sponsors" />
             <div className="grid grid-cols-4 max-lg:grid-cols-2 justify-center items-center gap-12">
+              {/* Replace these with real sponsor logos */}
               <img src={breadIcon} alt="" className="w-32" />
               <img src={breadIcon} alt="" className="w-32" />
               <img src={breadIcon} alt="" className="w-32" />
@@ -299,86 +277,86 @@ const Home = () => {
               <img src={breadIcon} alt="" className="w-32" />
             </div>
           </div>
+
           <div className="flex flex-col justify-center items-center gap-4">
-            <SectionTitle text="Powered By"></SectionTitle>
-            <div className="">
+            <SectionTitle text="Powered By" />
+            <div>
               <img src={breadIcon} alt="" className="w-64" />
             </div>
           </div>
+
           <div className="flex flex-col justify-center items-center gap-4">
-            <SectionTitle text="Contact Us"></SectionTitle>
+            <SectionTitle text="Contact Us" />
             <div className="flex flex-col justify-center items-center gap-4">
               <a
                 className="
-                    text-lg md:text-2xl 
-                    text-text 
-                    px-3 py-1 md:px-6 md:py-4 
-                    bg-gradient-to-br from-btn-primary to-btn-secondary 
-                    hover:from-btn-secondary hover:to-btn-primary 
-                    rounded-xl border-2 border-border 
-                    hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
-                    transition duration-300
-                    flex flex-row justify-center items-center gap-4 cursor-pointer
-                  "
+                  text-lg md:text-2xl 
+                  text-text 
+                  px-3 py-1 md:px-6 md:py-4 
+                  bg-gradient-to-br from-btn-primary to-btn-secondary 
+                  hover:from-btn-secondary hover:to-btn-primary 
+                  rounded-xl border-2 border-border 
+                  hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
+                  transition duration-300
+                  flex flex-row justify-center items-center gap-4 cursor-pointer
+                "
                 href="https://www.instagram.com/techno2025official/"
                 target="_blank"
               >
                 <h1 className="text-3xl max-lg:text-2xl text-text">
                   <FaInstagram />
-                </h1>{" "}
+                </h1>
                 @techno2025official
               </a>
             </div>
+
             <div className="flex flex-col justify-center items-center gap-12">
               <a
                 className="
-                    text-lg md:text-2xl 
-                    text-text 
-                    px-3 py-1 md:px-6 md:py-4 
-                    bg-gradient-to-br from-btn-primary to-btn-secondary 
-                    hover:from-btn-secondary hover:to-btn-primary 
-                    rounded-xl border-2 border-border 
-                    hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
-                    transition duration-300
-                    flex flex-row justify-center items-center gap-4 cursor-pointer
-                  "
+                  text-lg md:text-2xl 
+                  text-text 
+                  px-3 py-1 md:px-6 md:py-4 
+                  bg-gradient-to-br from-btn-primary to-btn-secondary 
+                  hover:from-btn-secondary hover:to-btn-primary 
+                  rounded-xl border-2 border-border 
+                  hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
+                  transition duration-300
+                  flex flex-row justify-center items-center gap-4 cursor-pointer
+                "
                 href="https://www.tiktok.com/@techno.himti"
                 target="_blank"
               >
                 <h1 className="text-3xl max-lg:text-2xl text-text">
                   <FaTiktok />
-                </h1>{" "}
+                </h1>
                 @techno.himti
               </a>
             </div>
+
             <div className="flex flex-col justify-center items-center gap-12">
               <a
                 className="
-                    text-lg md:text-2xl 
-                    text-text 
-                    px-3 py-1 md:px-6 md:py-4 
-                    bg-gradient-to-br from-btn-primary to-btn-secondary 
-                    hover:from-btn-secondary hover:to-btn-primary 
-                    rounded-xl border-2 border-border 
-                    hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
-                    transition duration-300
-                    flex flex-row justify-center items-center gap-4 cursor-pointer
-                  "
+                  text-lg md:text-2xl 
+                  text-text 
+                  px-3 py-1 md:px-6 md:py-4 
+                  bg-gradient-to-br from-btn-primary to-btn-secondary 
+                  hover:from-btn-secondary hover:to-btn-primary 
+                  rounded-xl border-2 border-border 
+                  hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] 
+                  transition duration-300
+                  flex flex-row justify-center items-center gap-4 cursor-pointer
+                "
                 href="mailto:himtitechno24@gmail.com"
                 target="_blank"
               >
                 <h1 className="text-3xl max-lg:text-2xl text-text">
                   <FiMail />
-                </h1>{" "}
+                </h1>
                 himtitechno24@gmail.com
               </a>
             </div>
           </div>
         </section>
-
-        {/* {!isMobile && (
-
-        )} */}
       </div>
     </>
   );
@@ -386,40 +364,36 @@ const Home = () => {
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
-    // Render a completed state
-    return <SectionTitle text="Live Now!"></SectionTitle>;
+    return <SectionTitle text="Live Now!" />;
   } else {
-    // Render custom countdown UI
     return (
-      <>
-        <div className="flex flex-col justify-center items-center">
-          <div
-            className="flex justify-center items-center px-8 py-4 m-4 bg-no-repeat bg-center bg-cover w-fit border-l-16 border-r-16 border-border rounded-xl shadow-2xl"
-            style={{
-              backgroundImage: `url(${scrollbg})`,
-            }}
-          >
-            <div className="flex flex-row gap-6 text-primary text-5xl font-alice">
-              <div>
-                {String(days).padStart(2, "0")}
-                <span className="block text-sm">Days</span>
-              </div>
-              <div>
-                {String(hours).padStart(2, "0")}
-                <span className="block text-sm">Hours</span>
-              </div>
-              <div>
-                {String(minutes).padStart(2, "0")}
-                <span className="block text-sm">Minutes</span>
-              </div>
-              <div>
-                {String(seconds).padStart(2, "0")}
-                <span className="block text-sm">Seconds</span>
-              </div>
+      <div className="flex flex-col justify-center items-center">
+        <div
+          className="flex justify-center items-center px-8 py-4 m-4 bg-no-repeat bg-center bg-cover w-fit border-l-16 border-r-16 border-border rounded-xl shadow-2xl"
+          style={{
+            backgroundImage: `url(${scrollbg})`,
+          }}
+        >
+          <div className="flex flex-row gap-6 text-primary text-5xl font-alice">
+            <div>
+              {String(days).padStart(2, "0")}
+              <span className="block text-sm">Days</span>
+            </div>
+            <div>
+              {String(hours).padStart(2, "0")}
+              <span className="block text-sm">Hours</span>
+            </div>
+            <div>
+              {String(minutes).padStart(2, "0")}
+              <span className="block text-sm">Minutes</span>
+            </div>
+            <div>
+              {String(seconds).padStart(2, "0")}
+              <span className="block text-sm">Seconds</span>
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 };

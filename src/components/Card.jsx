@@ -2,8 +2,10 @@ import React from 'react';
 
 import scrollbg from '../assets/scrollbg.png';
 import breadIcon from '../assets/bread_icon.png';
+import cookieIcon from "../assets/cookie1.png"
+import leafIcon from "../assets/leaf1.png"
 
-const Card = ({ title, description, icon = breadIcon }) => {
+const Card = ({ title, description, icon }) => {
     return (
         <div
             className="flex flex-col items-center px-8 py-12 relative text-center shadow-2xl
@@ -15,7 +17,7 @@ const Card = ({ title, description, icon = breadIcon }) => {
                 backgroundRepeat: 'no-repeat',
             }}
         >
-            <img src={icon} alt={`${title} Icon`} className="mb-8 w-1/2" />
+            <img src={icon} alt={`${title} Icon`} className="mb-8 w-40 max-lg:w-32" />
             <h3
                 className="text-5xl font-chancery mb-4 text-primary"
             >
