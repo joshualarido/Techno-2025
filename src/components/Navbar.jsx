@@ -12,7 +12,6 @@ const Navbar = () => {
     <>
       {/* Desktop Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-sky-950/20 py-4 px-4 md:px-12 flex justify-between items-center text-white transition duration-300">
-
         {/* Logo */}
         <Link className="w-1/4 md:w-1/6 lg:w-1/12" to="/">
           <img
@@ -34,15 +33,20 @@ const Navbar = () => {
               《 Events 》
             </p>
           </Link>
+          <Link to="/faq">
+            <p className="text-xl md:text-2xl hover:drop-shadow-[0_5px_15px_rgba(255,215,0,1)]">
+              《 Faqs 》
+            </p>
+          </Link>
         </div>
-        
+
         <a
-        href="https://registration.himtibinus.or.id"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="max-md:hidden "
+          href="https://registration.himtibinus.or.id"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="max-md:hidden "
         >
-        <Button text="Register" />
+          <Button text="Register" />
         </a>
 
         {/* Hamburger Icon (Mobile only) */}
@@ -64,6 +68,9 @@ const Navbar = () => {
           </Link>
           <Link to="/events" onClick={() => setIsOpen(false)}>
             <p className="text-lg">《 Events 》</p>
+          </Link>
+          <Link to="/faq" onClick={() => setIsOpen(false)}>
+            <p className="text-lg">《 Faqs 》</p>
           </Link>
           <a
             href="https://registration.himtibinus.or.id"
