@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import SectionTitle from "../components/SectionTitle";
 import Card from "../components/Card";
-import { categories, faqData } from "../components/faqData";
+import { categories, faqData } from "../data/faqData";
 import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import Footer from "../components/Footer";
