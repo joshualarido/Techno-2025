@@ -11,20 +11,20 @@ export const faqData = {
   TECHNO: [
     {
       question:
-        "Will transportation be provided for participants to the TECHNO 2024 venue?",
+        "Will transportation be provided for participants to the TECHNO 2025 venue?",
       answer:
-        "For the Alam Sutera, Senayan and Bekasi regions, limited transportation will be provided. There will be data collection for participants who wish to use the transportation provided.",
+        "More information will be provided regarding this very soon, so sit tight!",
     },
     {
       question:
-        "Is it still permissible to register as a HIMTI activist even if you don't take part in the TECHNO 2024 event?",
+        "Is it still permissible to register as a HIMTI activist even if you don't take part in the TECHNO 2025 event?",
       answer:
-        "Participants can still join as HIMTI activists even if they don't take part in the TECHNO 2024 event. However, it would be better if participants take part in the TECHNO 2024 event to get to know HIMTI better.",
+        "Participants can still join as HIMTI activists even if they don't take part in the TECHNO 2025 event. However, it would be better if participants take part in the TECHNO 2025 event to get to know HIMTI better.",
     },
   ],
   "Pembelajaran Bahasa Pemrograman (PBP)": [
     {
-      question: "Why should you learn the C and Python programming languages??",
+      question: "Why should you learn the C and Python programming languages?",
       answer:
         "For a beginner, C and Python are programming languages that can be used to understand the principles of programming algorithms easily. The C language is also used in the early stages of lectures by all SoCS majors in the Algorithm and Programming course, and the Python language is also used by SoCS Senayan students.",
     },
@@ -55,7 +55,7 @@ export const faqData = {
     {
       question: "What conditions are needed to access HIMTI KIT?",
       answer:
-        "To get access to the HIMTI KIT, BINUSIAN SoCS 2028 is registered to be present at the TECHNO 2024 main event from the start to the end of the event via the attendance form announced by the committee during the event. When HIMTI KIT can be accessed and how to access HIMTI KIT will be informed via the TECHNO 2024 participant LINE group. So that after the main event ends, it is hoped that participants will not leave the group first.",
+        "To get access to the HIMTI KIT, BINUSIAN SoCS 2029 is registered to be present at the TECHNO 2025 main event from the start to the end of the event via the attendance form announced by the committee during the event. When HIMTI KIT can be accessed and how to access HIMTI KIT will be informed via the TECHNO 2025 participant LINE group. So that after the main event ends, it is hoped that participants will not leave the group first.",
     },
   ],
   Twibbon: [
@@ -80,7 +80,7 @@ export const faqData = {
     },
     {
       question:
-        " have no experience in any organization before. Can I still register to become a HIMTI activist?",
+        "I have no experience in any organization before. Can I still register to become a HIMTI activist?",
       answer:
         "HIMTI activist registration is open to all SoCS students, both those who have or have never been involved in organizational activities. HIMTI can be the right choice to increase your organizational experience.",
     },

@@ -13,6 +13,9 @@ import leafIcon from "../assets/leaf1.png";
 import breadbutterfly from "../assets/breadbutterfly.png";
 import caterpillar1 from "../assets/caterpillar1.png";
 import leaves from "../assets/leaves.png";
+import jobstreet from "../assets/jobstreet.png"
+import dewaweb from "../assets/dewaweb.png"
+import cbn from "../assets/cbn.png"
 
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
@@ -39,6 +42,11 @@ const Home = () => {
     window.scrollTo({ top: 0, behavior: "instant" });
     navigate("/faq");
   };
+
+  const sponsors = [
+    { name: "JobStreet", logo: jobstreet, tier: "S", href: "https://www.jobstreet.co.id" },
+    { name: "CBN Internet", logo: cbn, tier: "L", href: "https://www.cbn.id/en" },
+  ];
 
   const cardData = [
     {
@@ -263,16 +271,18 @@ const Home = () => {
         <section className="w-full h-full flex flex-col justify-center items-center gap-16 max-lg:pb-12 pt-30">
           <div className="flex flex-col justify-center items-center gap-4">
             <SectionTitle text="Our Sponsors" />
-            <div className="grid grid-cols-4 max-lg:grid-cols-2 justify-center items-center gap-12">
-              {[...Array(8)].map((_, i) => (
-                <img key={i} src={breadIcon} alt="" className="w-32" />
+            
+            <div className="grid gap-6 sm:gap-8 w-full
+                            [grid-template-columns:repeat(auto-fit,minmax(140px,1fr))]">
+              {sponsors.map((s) => (
+                <SponsorLogo key={s.name} {...s} />
               ))}
             </div>
           </div>
           <div className="flex flex-col justify-center items-center gap-4">
             <SectionTitle text="Powered By" />
             <div>
-              <img src={breadIcon} alt="" className="w-64" />
+              <img src={dewaweb} alt="" className="w-64 rounded-full" />
             </div>
           </div>
           <div className="flex flex-col justify-center items-center gap-4">
@@ -284,7 +294,7 @@ const Home = () => {
               <ContactLink href="https://www.tiktok.com/@techno.himti" icon={<FaTiktok />} text="@techno.himti" />
             </div>
             <div className="flex flex-col justify-center items-center gap-12">
-              <ContactLink href="mailto:himtitechno24@gmail.com" icon={<FiMail />} text="himtitechno24@gmail.com" />
+              <ContactLink href="mailto:himtitechno24@gmail.com" icon={<FiMail />} text="himtitechno25@gmail.com" />
             </div>
           </div>
         </section>
@@ -295,7 +305,7 @@ const Home = () => {
 
 const ContactLink = ({ href, icon, text }) => (
   <a
-    className="text-lg md:text-2xl text-text px-3 py-1 md:px-6 md:py-4 bg-gradient-to-br from-btn-primary to-btn-secondary hover:from-btn-secondary hover:to-btn-primary rounded-xl border-2 border-border hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] transition duration-300 flex flex-row justify-center items-center gap-4 cursor-pointer"
+    className="text-lg md:text-2xl text-text px-4 py-3 md:px-6 md:py-4 bg-gradient-to-br from-btn-primary to-btn-secondary hover:from-btn-secondary hover:to-btn-primary rounded-xl border-2 border-border hover:shadow-[0_5px_15px_rgba(255,215,0,0.6)] transition duration-300 flex flex-row justify-center items-center gap-4 cursor-pointer"
     href={href}
     target="_blank"
     rel="noreferrer"
@@ -307,11 +317,11 @@ const ContactLink = ({ href, icon, text }) => (
 
 const renderer = ({ days, hours, minutes, seconds, completed }) =>
   completed ? (
-    <SectionTitle text="Live Now!" />
+    <SectionTitle text="Live Now! 🍭🐇" />
   ) : (
     <div className="flex flex-col justify-center items-center">
       <div
-        className="flex justify-center items-center px-8 py-4 m-4 bg-no-repeat bg-center bg-cover w-fit border-l-16 border-r-16 border-border rounded-xl shadow-2xl"
+        className="flex flex-col gap-4 justify-center items-center px-8 py-4 m-4 bg-no-repeat bg-center bg-cover w-fit border-l-16 border-r-16 border-border rounded-xl shadow-2xl"
         style={{ backgroundImage: `url(${scrollbg})` }}
       >
         <div className="flex flex-row gap-6 text-primary text-5xl font-alice">
@@ -320,15 +330,40 @@ const renderer = ({ days, hours, minutes, seconds, completed }) =>
           <TimeBlock value={minutes} label="Minutes" />
           <TimeBlock value={seconds} label="Seconds" />
         </div>
+        <h2 className="text-2xl text-text text-center">until Sunday, 7 September 2025</h2>
       </div>
     </div>
   );
 
 const TimeBlock = ({ value, label }) => (
   <div>
-    {String(value).padStart(2, "0")}
+    <p className="font-alice max-lg:text-4xl">{String(value).padStart(2, "0")}</p>
     <span className="block text-sm">{label}</span>
   </div>
+);
+
+const TIER_HEIGHT = {
+  L: "h-20 md:h-24", // ~6 units
+  M: "h-16 md:h-20", // ~5 units
+  S: "h-12 md:h-16", // ~4 units
+};
+
+const SponsorLogo = ({ name, logo, tier = "M", href }) => (
+  <a
+    href={href || "#"}
+    target="_blank"
+    rel="noreferrer"
+    className="group inline-flex items-center justify-center rounded-xl border border-border/40 bg-white p-6 transition shadow-sm"
+    aria-label={name}
+  >
+    <img
+      src={logo}
+      alt={name}
+      className={`${TIER_HEIGHT[tier] || TIER_HEIGHT.M} w-auto object-contain`}
+      loading="lazy"
+      draggable={false}
+    />
+  </a>
 );
 
 export default Home;

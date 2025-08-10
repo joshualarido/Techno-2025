@@ -4,7 +4,7 @@ const Button = ({ text, link = "#" }) => {
       className="
         text-lg md:text-2xl 
         text-text 
-        px-3 py-2 md:px-6 md:py-4 
+        px-4 py-3 md:px-6 md:py-4 
         bg-gradient-to-br from-btn-primary to-btn-secondary 
         hover:from-btn-secondary hover:to-btn-primary 
         rounded-xl border-2 border-border 

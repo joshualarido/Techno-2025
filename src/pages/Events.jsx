@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import posterImage from "../assets/posterevents.png";
@@ -57,6 +57,13 @@ const Events = () => {
     const expoPrev = () => setExpoIndex(i => (i === 0 ? expoTotal - 1 : i - 1));
     const expoNext = () => setExpoIndex(i => (i === expoTotal - 1 ? 0 : i + 1));
     const currentExpo = expoData[expoIndex] ?? {};
+    
+    const [isPosterOpen, setIsPosterOpen] = useState(false);
+
+    useEffect(() => {
+      document.body.style.overflow = isPosterOpen ? "hidden" : "";
+      return () => { document.body.style.overflow = ""; };
+    }, [isPosterOpen]);
 
   return (
     <>
@@ -82,16 +89,72 @@ const Events = () => {
               className="absolute top-[-80px] max-lg:top-[-40px] right-[-30px] max-lg:right-[-20px] w-50 max-lg:w-32 rotate-left-right scale-x-[-1]"
               style={{ zIndex: 5 }}
             />
+            
+            {isPosterOpen && (
+              <div
+                className="fixed inset-0 z-[100] flex items-center justify-center"
+                aria-modal="true"
+                role="dialog"
+                aria-labelledby="poster-title"
+                onClick={() => setIsPosterOpen(false)}
+              >
+                <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+                <div
+                  className="relative z-[101] max-w-[95vw] max-h-[90vh] p-3 md:p-4"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    className="absolute -top-3 -right-3 md:-top-4 md:-right-4 rounded-full border border-white/30 bg-white/10 text-white
+                              w-9 h-9 md:w-10 md:h-10 flex items-center justify-center
+                              hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/60 transition"
+                    onClick={() => setIsPosterOpen(false)}
+                    aria-label="Tutup"
+                  >
+                    ✖
+                  </button>
+
+                  <div className="bg-black/30 rounded-lg overflow-hidden shadow-2xl">
+                    <img
+                      id="poster-title"
+                      src={posterImage}
+                      alt="Poster TECHNO 2025"
+                      className="block max-h-[85vh] max-w-[92vw] md:max-w-[85vw] object-contain"
+                      draggable={false}
+                    />
+                  </div>
+
+                  <div className="mt-3 flex justify-center md:hidden">
+                    <button
+                      className="px-4 py-2 rounded-lg border border-white/30 text-white bg-white/10
+                                hover:bg-white/20 transition"
+                      onClick={() => setIsPosterOpen(false)}
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Left: Poster */}
             <div className="w-1/3 max-lg:w-full max-lg:h-48">
-              <img src={posterImage} alt="Event Poster" className="w-full h-full object-cover" />
+              <img
+                src={posterImage}
+                alt="Event Poster"
+                className="w-full h-full object-cover cursor-zoom-in"
+                onClick={() => setIsPosterOpen(true)}
+                role="button"
+                aria-label="Perbesar poster"
+                tabIndex={0}
+                onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setIsPosterOpen(true)}
+              />
             </div>
 
             {/* Right: Info Card */}
             <div
               className="p-10 w-2/3 max-lg:w-full flex flex-col justify-start items-center text-center text-text gap-12
-                         border-t-16 border-b-16 border-border shadow-2xl"
+                         border-t-16 border-b-16 border-border shadow-2xl max-lg:px-6"
               style={{
                 backgroundImage: `url(${scrollbg})`,
                 backgroundSize: "100% 100%",
@@ -116,7 +179,7 @@ const Events = () => {
                     {current.location || "—"}
                   </h3>
 
-                  <div className="flex flex-row justify-center items-center gap-12">
+                  <div className="flex flex-row justify-center items-center gap-12 max-lg:gap-0">
                     <button
                       className="text-5xl cursor-pointer select-none"
                       onClick={handlePrev}
@@ -129,7 +192,7 @@ const Events = () => {
                       <li>📅 {current.date || "—"}</li>
                       <li>📍 {current.venue || "—"}</li>
                       <li>🕒 {current.time || "—"}</li>
-                      <li>{current.shift || "—"}</li>
+                      <li>🍎 {current.shift || "—"}</li>
                     </ul>
 
                     <button
@@ -232,31 +295,31 @@ const Events = () => {
                 <IoIosArrowBack />
                 </button>
 
-                <div className="flex flex-col justify-center items-center w-fit h-full shadow-2xl rounded-2xl overflow-hidden">
-                {/* Image */}
-                <div className="w-full">
-                    <img
-                    src={currentExpo.image || alsut}
-                    alt={currentExpo.location || "Expo"}
-                    className="w-full object-cover h-48"
-                    />
-                </div>
+                <div className="flex flex-col justify-center items-center w-128 max-lg:w-96 max-lg:h-128 h-full shadow-2xl rounded-2xl overflow-hidden">
+                  {/* Image */}
+                  <div className="w-full">
+                      <img
+                      src={currentExpo.image || alsut}
+                      alt={currentExpo.location || "Expo"}
+                      className="w-full object-cover h-48"
+                      />
+                  </div>
 
-                {/* Text */}
-                <div
-                    className="h-full w-full flex flex-col justify-center items-center
-                            bg-no-repeat bg-center bg-cover border-x-20 border-border gap-8 p-12"
-                    style={{ backgroundImage: `url(${scrollbg})` }}
-                >
-                    <h2 className="text-5xl font-chancery text-center" style={{ color: "#95168A" }}>
-                    {currentExpo.location || "—"}
-                    </h2>
-                    <p className="text-2xl" style={{ color: "#694B21" }}>
-                    📅 {currentExpo.date || "—"} <br />
-                    🕒 {currentExpo.time || "—"} <br />
-                    📍 {currentExpo.venue || "—"}
-                    </p>
-                </div>
+                  {/* Text */}
+                  <div
+                      className="h-full w-full flex flex-col justify-center items-center
+                              bg-no-repeat bg-center bg-cover border-x-20 border-border gap-8 p-12"
+                      style={{ backgroundImage: `url(${scrollbg})` }}
+                  >
+                      <h2 className="text-5xl font-chancery text-center" style={{ color: "#95168A" }}>
+                      {currentExpo.location || "—"}
+                      </h2>
+                      <p className="text-2xl" style={{ color: "#694B21" }}>
+                      📅 {currentExpo.date || "—"} <br />
+                      🕒 {currentExpo.time || "—"} <br />
+                      📍 {currentExpo.venue || "—"}
+                      </p>
+                  </div>
                 </div>
 
                 <button
