@@ -61,9 +61,9 @@ export const faqData = {
   Twibbon: [
     {
       question:
-        "Does twibbon have to be uploaded to Instagram if you want to follow TECHNO?",
+        "Will I have to upload a Twibbon to Instagram if I want to follow TECHNO?",
       answer:
-        "Twibbon is not required to be uploaded, but can be uploaded to liven the event.",
+        "Yes there will be a twibbon for participants of the TECHNO event.",
     },
   ],
   "HIMTI Activist": [
