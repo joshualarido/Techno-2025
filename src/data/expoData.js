@@ -17,7 +17,7 @@ const expoData = [
   },
   {
     location: "Senayan",
-    date: "25/8",
+    date: "25 Agustus 2025",
     time: "07.00 - 17.00",
     venue: "Binus @Senayan",
     image: alsut,
