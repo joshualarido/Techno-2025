@@ -84,7 +84,11 @@ const Home = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm z-[-1]" />
         <div className="flex flex-col justify-center items-center gap-6 w-full pt-32 pb-20">
           <img src={techno2025logo} alt="herologo" className="w-1/3 max-lg:w-2/3 bob-animation" />
-          <Countdown date={new Date("2025-09-07T09:00:00")} renderer={renderer} />
+          <div className="flex flex-row max-xl:flex-col max-xl:gap-4 justify-center items-center text-center">
+            <Countdown date={new Date("2025-09-07T11:00:00")} renderer={mlgRender} />
+            <Countdown date={new Date("2025-09-28T11:30:00")} renderer={gjktRender} />
+            <Countdown date={new Date("2025-09-14T12:00:00")} renderer={smgRender} />
+          </div>
           <a href="#about">
             <Button text="Learn more →" />
           </a>
@@ -315,9 +319,9 @@ const ContactLink = ({ href, icon, text }) => (
   </a>
 );
 
-const renderer = ({ days, hours, minutes, seconds, completed }) =>
+const mlgRender = ({ days, hours, minutes, seconds, completed }) =>
   completed ? (
-    <SectionTitle text="Live Now! 🍭🐇" />
+    <SectionTitle text="Malang is Live Now! 🍭🐇" />
   ) : (
     <div className="flex flex-col justify-center items-center">
       <div
@@ -330,7 +334,47 @@ const renderer = ({ days, hours, minutes, seconds, completed }) =>
           <TimeBlock value={minutes} label="Minutes" />
           <TimeBlock value={seconds} label="Seconds" />
         </div>
-        <h2 className="text-2xl text-text text-center">until Sunday, 7 September 2025</h2>
+        <h2 className="text-2xl text-text text-center font-alice">MLG - Sunday, 7 September 2025</h2>
+      </div>
+    </div>
+  );
+  
+const gjktRender = ({ days, hours, minutes, seconds, completed }) =>
+  completed ? (
+    <SectionTitle text="Greater Jakarta is Live Now! 🍭🐇" />
+  ) : (
+    <div className="flex flex-col justify-center items-center">
+      <div
+        className="flex flex-col gap-4 justify-center items-center px-8 py-4 m-4 bg-no-repeat bg-center bg-cover w-fit border-l-16 border-r-16 border-border rounded-xl shadow-2xl"
+        style={{ backgroundImage: `url(${scrollbg})` }}
+      >
+        <div className="flex flex-row gap-6 text-primary text-5xl font-alice">
+          <TimeBlock value={days} label="Days" />
+          <TimeBlock value={hours} label="Hours" />
+          <TimeBlock value={minutes} label="Minutes" />
+          <TimeBlock value={seconds} label="Seconds" />
+        </div>
+        <h2 className="text-2xl text-text text-center font-alice">GJKT - Sunday, 28 September 2025</h2>
+      </div>
+    </div>
+  );
+  
+const smgRender = ({ days, hours, minutes, seconds, completed }) =>
+  completed ? (
+    <SectionTitle text="Semarang is Live Now! 🍭🐇" />
+  ) : (
+    <div className="flex flex-col justify-center items-center">
+      <div
+        className="flex flex-col gap-4 justify-center items-center px-8 py-4 m-4 bg-no-repeat bg-center bg-cover w-fit border-l-16 border-r-16 border-border rounded-xl shadow-2xl"
+        style={{ backgroundImage: `url(${scrollbg})` }}
+      >
+        <div className="flex flex-row gap-6 text-primary text-5xl font-alice">
+          <TimeBlock value={days} label="Days" />
+          <TimeBlock value={hours} label="Hours" />
+          <TimeBlock value={minutes} label="Minutes" />
+          <TimeBlock value={seconds} label="Seconds" />
+        </div>
+        <h2 className="text-2xl text-text text-cente font-alice">SMG - Sunday, 14 September 2025</h2>
       </div>
     </div>
   );

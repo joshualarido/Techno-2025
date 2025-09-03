@@ -7,7 +7,7 @@ import logoTechno from '../assets/logo-techno.png'
 function Footer() {
   return (
     <>
-      <footer className="bg-gradient-to-b from-sky-500/90 via-sky-600/80 to-sky-700/70 flex flex-col gap-12 py-12">
+      <footer className="bg-gradient-to-b from-sky-500/90 via-sky-600/80 to-sky-700/70 flex flex-col gap-12 py-12 px-4">
         <div className="flex flex-row max-lg:flex-row gap-12 max-lg:gap-2 justify-center items-center">
           <img src= {logoTechno} alt="Logo Techno" className="h-[128px] max-lg:h-auto max-lg:w-1/5" />
           <img src= {logoBinus} alt="Logo Binus" className="h-[128px] max-lg:h-auto max-lg:w-1/5" />

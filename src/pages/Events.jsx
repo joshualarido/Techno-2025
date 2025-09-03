@@ -179,7 +179,7 @@ const Events = () => {
                     {current.location || "—"}
                   </h3>
 
-                  <div className="flex flex-row justify-center items-center gap-12 max-lg:gap-0">
+                  <div className="flex flex-row justify-center items-center gap-12 max-lg:gap-0 w-full">
                     <button
                       className="text-5xl cursor-pointer select-none"
                       onClick={handlePrev}
@@ -188,11 +188,11 @@ const Events = () => {
                       <IoIosArrowBack />
                     </button>
 
-                    <ul className="text-xl text-left p-6 border-border border-2 rounded-xl">
+                    <ul className="text-xl text-left p-6 border-border border-2 rounded-xl w-full">
                       <li>📅 {current.date || "—"}</li>
-                      <li>📍 {current.venue || "—"}</li>
+                      <li>📍 {current.location || "—"}</li>
                       <li>🕒 {current.time || "—"}</li>
-                      <li>🍎 {current.shift || "—"}</li>
+                      <li>📝 {current.material || "—"}</li>
                     </ul>
 
                     <button
@@ -228,8 +228,6 @@ const Events = () => {
               <a href="https://registration.himtibinus.or.id" target="_blank" rel="noreferrer">
                 <Button text="Register Now" />
               </a>
-
-              <h1 className="text-text text-5xl">More Schedules Coming Soon!</h1>
             </div>
           </div>
         </section>
@@ -335,8 +333,6 @@ const Events = () => {
                 <IoIosArrowForward />
                 </button>
             </div>
-
-            <SectionTitle text="More Expo Schedules Coming Soon!" />
             </section>
       </div>
     </>

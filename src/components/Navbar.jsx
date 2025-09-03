@@ -40,29 +40,31 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <a
-          href="https://registration.himtibinus.or.id"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="max-md:hidden "
-        >
-          <Button text="Register" />
-        </a>
+        <div className="flex flex-row justify-center items-center gap-6">
+          {/* Hamburger Icon (Mobile only) */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white text-3xl"
+            >
+              {isOpen ? <FiX /> : <FiMenu />}
+            </button>
+          </div>
 
-        {/* Hamburger Icon (Mobile only) */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white text-3xl"
+          <a
+            href="https://registration.himtibinus.or.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
           >
-            {isOpen ? <FiX /> : <FiMenu />}
-          </button>
+            <Button text="Register" />
+          </a>
         </div>
       </nav>
 
       {/* Mobile Nav Panel */}
       {isOpen && (
-        <div className="fixed top-22 z-50 md:hidden backdrop-blur-md bg-sky-950/20 w-full p-6 flex flex-col items-center gap-8 text-white">
+        <div className="fixed top-30 z-50 md:hidden backdrop-blur-md bg-sky-950/20 w-full p-6 flex flex-col items-center gap-8 text-white">
           <Link to="/" onClick={() => setIsOpen(false)}>
             <p className="text-lg">《 Home 》</p>
           </Link>
@@ -72,15 +74,6 @@ const Navbar = () => {
           <Link to="/faq" onClick={() => setIsOpen(false)}>
             <p className="text-lg">《 Faqs 》</p>
           </Link>
-          <a
-            href="https://registration.himtibinus.or.id"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full text-center"
-            onClick={() => setIsOpen(false)}
-          >
-            <Button text="Register" />
-          </a>
         </div>
       )}
     </>

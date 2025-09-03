@@ -1,127 +1,46 @@
 const pbpData = [
-  // 29 Agustus
+  // MINGGU 1
   {
-    location: "Alam Sutera",
-    date: "Jumat, 29 Agustus 2025",
-    venue: "Binus @Alam Sutera",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
+    date: "Selasa, 9 September 2025",
+    time: "19.00 – 21.00",
+    location: "Online",
+    material:
+      "Basic C → Input/Output, Data Type, Variable, Aritmatik, Logical Operator, Selection, Repetition",
   },
   {
-    location: "Alam Sutera",
-    date: "Jumat, 29 Agustus 2025",
-    venue: "Binus @Alam Sutera",
-    time: "13.00 - 15.00",
-    shift: "Shift 2",
-  },
-  {
-    location: "Kemanggisan",
-    date: "Jumat, 29 Agustus 2025",
-    venue: "Binus @Kemanggisan",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
-  },
-  {
-    location: "Kemanggisan",
-    date: "Jumat, 29 Agustus 2025",
-    venue: "Binus @Kemanggisan",
-    time: "13.00 - 15.00",
-    shift: "Shift 2",
-  },
-  {
-    location: "Semarang",
-    date: "Jumat, 29 Agustus 2025",
-    venue: "Binus @Semarang",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
-  },
-  {
-    location: "Semarang",
-    date: "Jumat, 29 Agustus 2025",
-    venue: "Binus @Semarang",
-    time: "13.00 - 15.00",
-    shift: "Shift 2",
-  },
-  {
-    location: "Bekasi",
-    date: "Jumat, 29 Agustus 2025",
-    venue: "Binus @Bekasi",
-    time: "13.00 - 15.00",
-    shift: "Shift 2",
+    date: "Jumat, 12 September 2025",
+    time: "19.00 – 21.00",
+    location: "Online",
+    material:
+      "Basic C → Input/Output, Data Type, Variable, Aritmatik, Logical Operator, Selection, Repetition",
   },
 
-  // 1 September
+  // MINGGU 2
   {
-    location: "Alam Sutera",
-    date: "Senin, 1 September 2025",
-    venue: "Binus @Alam Sutera",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
+    date: "Selasa, 16 September 2025",
+    time: "19.00 – 21.00",
+    location: "Online",
+    material: "Pointer & Array, Function, Recursive",
   },
   {
-    location: "Alam Sutera",
-    date: "Senin, 1 September 2025",
-    venue: "Binus @Alam Sutera",
-    time: "13.00 - 15.00",
-    shift: "Shift 2",
-  },
-  {
-    location: "Kemanggisan",
-    date: "Senin, 1 September 2025",
-    venue: "Binus @Kemanggisan",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
-  },
-  {
-    location: "Kemanggisan",
-    date: "Senin, 1 September 2025",
-    venue: "Binus @Kemanggisan",
-    time: "13.00 - 15.00",
-    shift: "Shift 2",
-  },
-  {
-    location: "Semarang",
-    date: "Senin, 1 September 2025",
-    venue: "Binus @Semarang",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
-  },
-  {
-    location: "Bekasi",
-    date: "Senin, 1 September 2025",
-    venue: "Binus @Bekasi",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
+    date: "Jumat, 19 September 2025",
+    time: "19.00 – 21.00",
+    location: "Online",
+    material: "Pointer & Array, Function, Recursive",
   },
 
-  // 3 September
+  // MINGGU 3
   {
-    location: "Alam Sutera",
-    date: "Rabu, 3 September 2025",
-    venue: "Binus @Alam Sutera",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
+    date: "Selasa, 23 September 2025",
+    time: "19.00 – 21.00",
+    location: "Online",
+    material: "Sorting, Searching, File Input/Output",
   },
   {
-    location: "Alam Sutera",
-    date: "Rabu, 3 September 2025",
-    venue: "Binus @Alam Sutera",
-    time: "13.00 - 15.00",
-    shift: "Shift 2",
-  },
-  {
-    location: "Kemanggisan",
-    date: "Rabu, 3 September 2025",
-    venue: "Binus @Kemanggisan",
-    time: "09.00 - 11.00",
-    shift: "Shift 1",
-  },
-  {
-    location: "Kemanggisan",
-    date: "Rabu, 3 September 2025",
-    venue: "Binus @Kemanggisan",
-    time: "13.00 - 15.00",
-    shift: "Shift 2",
+    date: "Kamis, 25 September 2025",
+    time: "19.00 – 21.00",
+    location: "Online",
+    material: "Sorting, Searching, File Input/Output",
   },
 ];
 
