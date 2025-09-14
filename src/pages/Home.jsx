@@ -16,6 +16,7 @@ import leaves from "../assets/leaves.png";
 import jobstreet from "../assets/jobstreet.png"
 import dewaweb from "../assets/dewaweb.png"
 import cbn from "../assets/cbn.png"
+import alfagift from "../assets/alfagift.png"
 
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
@@ -44,8 +45,9 @@ const Home = () => {
   };
 
   const sponsors = [
-    // { name: "JobStreet", logo: jobstreet, tier: "S", href: "https://www.jobstreet.co.id" },
-    // { name: "CBN Internet", logo: cbn, tier: "L", href: "https://www.cbn.id/en" },
+    { name: "JobStreet", logo: jobstreet, tier: "S", href: "https://www.jobstreet.co.id" },
+    { name: "CBN Internet", logo: cbn, tier: "L", href: "https://www.cbn.id/en" },
+    { name: "Alfagift", logo: alfagift, tier: "M", href: "https://www.cbn.id/en" },
   ];
 
   const cardData = [
@@ -86,7 +88,6 @@ const Home = () => {
           <img src={techno2025logo} alt="herologo" className="w-1/3 max-lg:w-2/3 bob-animation" />
           <div className="flex flex-row max-xl:flex-col max-xl:gap-4 justify-center items-center text-center">
             <Countdown date={new Date("2025-09-28T11:30:00")} renderer={gjktRender} />
-            <Countdown date={new Date("2025-09-14T12:00:00")} renderer={smgRender} />
           </div>
           <a href="#about">
             <Button text="Learn more →" />

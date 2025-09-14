@@ -256,12 +256,12 @@ const Events = () => {
             </h2>
 
             <div className="flex items-center justify-center w-1/2 max-lg:w-full">
-              <img src={artistsecret} alt="Guest Border" className="w-full h-full object-contain" />
+              <img src={artist} alt="Guest Border" className="w-full h-full object-contain" />
             </div>
 
             <div className="flex-1 text-left px-4">
               <p className="text-2xl text-center">
-                Who might we invite to this year's TECHNO event? Stay tuned to find out!
+                We welcome Nadine Abigail, bringing her voice and talent to this year's TECHNO event! So stay tuned and await the big show!
               </p>
             </div>
           </div>
