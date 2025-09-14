@@ -47,7 +47,7 @@ const Home = () => {
   const sponsors = [
     { name: "JobStreet", logo: jobstreet, tier: "S", href: "https://www.jobstreet.co.id" },
     { name: "CBN Internet", logo: cbn, tier: "L", href: "https://www.cbn.id/en" },
-    { name: "Alfagift", logo: alfagift, tier: "M", href: "https://www.cbn.id/en" },
+    { name: "Alfagift", logo: alfagift, tier: "M", href: "https://alfagift.id/" },
   ];
 
   const cardData = [
