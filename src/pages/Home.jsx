@@ -85,7 +85,6 @@ const Home = () => {
         <div className="flex flex-col justify-center items-center gap-6 w-full pt-32 pb-20">
           <img src={techno2025logo} alt="herologo" className="w-1/3 max-lg:w-2/3 bob-animation" />
           <div className="flex flex-row max-xl:flex-col max-xl:gap-4 justify-center items-center text-center">
-            <Countdown date={new Date("2025-09-07T11:00:00")} renderer={mlgRender} />
             <Countdown date={new Date("2025-09-28T11:30:00")} renderer={gjktRender} />
             <Countdown date={new Date("2025-09-14T12:00:00")} renderer={smgRender} />
           </div>
