@@ -17,6 +17,7 @@ import jobstreet from "../assets/jobstreet.png"
 import dewaweb from "../assets/dewaweb.png"
 import cbn from "../assets/cbn.png"
 import alfagift from "../assets/alfagift.png"
+import luxs from "../assets/luxs.png"
 
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
@@ -45,9 +46,10 @@ const Home = () => {
   };
 
   const sponsors = [
-    { name: "JobStreet", logo: jobstreet, tier: "S", href: "https://www.jobstreet.co.id" },
-    { name: "CBN Internet", logo: cbn, tier: "L", href: "https://www.cbn.id/en" },
+    { name: "JobStreet", logo: jobstreet, tier: "M", href: "https://www.jobstreet.co.id" },
+    { name: "CBN Internet", logo: cbn, tier: "M", href: "https://www.cbn.id/en" },
     { name: "Alfagift", logo: alfagift, tier: "M", href: "https://alfagift.id/" },
+    { name: "LUXS", logo: luxs, tier: "M", href: "https://luxsproduction.com/" },
   ];
 
   const cardData = [
